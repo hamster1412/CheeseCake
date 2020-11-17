@@ -3,8 +3,8 @@ import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
-const name = "AnTr";
-export const siteTitle = "Next.js Sample Website";
+const name = "Cheese Cake";
+export const siteTitle = "CheeseCake";
 
 export default function Layout({ children, home }) {
   return (
@@ -28,7 +28,7 @@ export default function Layout({ children, home }) {
         {home ? (
           <>
             <img
-              src="/images/profile.jpg"
+              src="/images/cheesecake.gif"
               className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
               alt={name}
             />

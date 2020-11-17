@@ -1,20 +1,35 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
+import Link from "next/link";
+import fs from "fs";
 
-export default function Home() {
-  return (
+const Home = ({ slugs }) => (
+  <div>
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Hi I'm An, I'm a web developer.</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
     </Layout>
-  );
-}
+    {slugs.map((slug) => {
+      return (
+        <div className={utilStyles.headingMd} key={slug}>
+          <Link href={slug}>
+            <a>{slug} </a>
+          </Link>
+        </div>
+      );
+    })}
+  </div>
+);
+
+export const getStaticProps = async() => {
+  const files = fs.readdirSync("posts");
+  return {
+    props: {
+      slugs: files.map((filename) => filename.replace(".md", "")),
+    },
+  };
+};
+
+export default Home;
