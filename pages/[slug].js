@@ -33,15 +33,12 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
-  const markdownWithMetadata = fs
-    .readFileSync(path.join("posts", slug + ".md"))
+  const jobPostingData = fs
+    .readFileSync(path.join("posts", slug + ".json"))
     .toString();
-  const parsedMarkdown = matter(markdownWithMetadata);
-  const htmlString = marked(parsedMarkdown.content);
   return {
     props: {
-      htmlString,
-      data: parsedMarkdown.data,
+      data: jobPostingData,
     },
   };
 };

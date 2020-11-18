@@ -25,6 +25,12 @@ const Home = ({ slugs }) => (
 
 export const getStaticProps = async() => {
   const files = fs.readdirSync("posts");
+  const jobPostingData = fs
+  .readFileSync(path.join("posts", slug + ".json"))
+  .toString();
+  //open each file
+  // parse the json
+  // filter
   return {
     props: {
       slugs: files.map((filename) => filename.replace(".md", "")),
