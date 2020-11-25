@@ -10,12 +10,14 @@ const Home = ({ slugs }) => (
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <>
+      </>
     </Layout>
     {slugs.map((slug) => {
       return (
-        <div className={utilStyles.headingMd} key={slug}>
+        <div className={utilStyles.center} key={slug}>
           <Link href={slug}>
-            <a>{slug} </a>
+            <a> {slug} </a>
           </Link>
         </div>
       );

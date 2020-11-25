@@ -8,11 +8,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "autoprefixer": "^10.0.2",
     "faker": "^5.1.0",
     "gray-matter": "^4.0.2",
     "marked": "^1.2.4",
     "next": "^10.0.0",
+    "postcss": "^8.1.10",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "tailwindcss": "^2.0.1"
   }
 }
