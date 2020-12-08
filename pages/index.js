@@ -1,28 +1,35 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
-import Filterbox from "../components/filter-box";
-import utilStyles from "../styles/utils.module.css";
-import Link from "next/link";
+import Nav from "../components/nav";
+import List from "../components/list";
+// import utilStyles from "../styles/utils.module.css";
+// import Link from "next/link";
 import fs from "fs";
 
 const Home = ({ slugs }) => (
   <div>
+    <Nav />
+    <br />
+    <br />
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      {/* <Filterbox/> */}
+      <br />
+      <br />
     </Layout>
-    <Filterbox/>
-    {slugs.map((slug) => {
+    <List />
+    {/* articles */}
+    {/*{slugs.map((slug) => {
       return (
         <div className={utilStyles.center} key={slug}>
-          <h1>hehe</h1>
           <Link href={slug}>
             <a> {slug} </a>
           </Link>
         </div>
       );
-    })}
+    })} */}
   </div>
 );
 
