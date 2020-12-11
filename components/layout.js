@@ -33,6 +33,13 @@ export default function Layout({ children, home }) {
               alt={name}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <p>
+              As a company of seasoned travelers, we’ve experienced first hand
+              what a stressful and difficult experience it is to find reliable
+              information about programs abroad. Our mission is to give you the
+              knowledge and confidence to choose the right program for your next
+              adventure
+            </p>
           </>
         ) : (
           <>
