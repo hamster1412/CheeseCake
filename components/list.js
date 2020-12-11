@@ -1,7 +1,7 @@
 import React from "react";
 import SelectBox from "./slectBox";
 
-export default function List() {
+export default function List({slugs}) {
   return (
     <div>
       <div class="flex flex-col">

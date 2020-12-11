@@ -1,6 +1,11 @@
 import React from "react";
 
 export default function Nav() {
+  let key = "";
+  const search = (e) => {
+    key = e.target.value;
+    console.log("it's working", key);
+  };
   return (
     <div>
       <nav class="bg-gray-800">
@@ -84,6 +89,12 @@ export default function Nav() {
                   >
                     Calendar
                   </a>
+                  <input
+                    onChange={(e) => search(e)}
+                    placeholder="Search"
+                    type="text"
+                    class="px-3 rounded-md text-sm font-medium"
+                  ></input>
                 </div>
               </div>
             </div>
