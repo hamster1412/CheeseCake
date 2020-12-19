@@ -1,9 +1,6 @@
 import React from "react";
 import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 import Head from "next/head";
-import marked from "marked";
 
 const Post = ({ htmlString, data }) => {
   return (
@@ -12,36 +9,17 @@ const Post = ({ htmlString, data }) => {
         <title>{data.title}</title>
         <meta title="description" content={data.description} />
       </Head>
-     <div dangerouslySetInnerHTML={{ __html: htmlString}}/>
+      <div dangerouslySetInnerHTML={{ __html: htmlString }} />
     </>
   );
 };
 
-export const getStaticPaths = async () => {
-  const files = fs.readdirSync("posts");
-  console.log("FILES: ", files);
-  const paths = files.map((filename) => ({
-    params: {
-      slug: filename.replace(".md", ""),
-    },
-  }));
-  console.log("PATHS: ", paths);
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export const getStaticProps = async ({ params: { slug } }) => {
-  const markdownWithMetadata = fs
-    .readFileSync(path.join("posts", slug + ".md"))
-    .toString();
-  const parsedMarkdown = matter(markdownWithMetadata);
-  const htmlString = marked(parsedMarkdown.content);
+export const getStaticProps = async () => {
+  const data = fs.readFileSync('data.json').toString();
   return {
     props: {
       htmlString,
-      data: parsedMarkdown.data,
+      data,
     },
   };
 };

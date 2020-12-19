@@ -36,12 +36,9 @@ const Home = () => (
 );
 
 export const getStaticProps = async () => {
-  const files = fs.readdirSync("posts");
-  return {
-    props: {
-      slugs: files.map((filename) => filename.replace(".md", "")),
-    },
-  };
+  const data = fs.readFileSync("data.json", "utf-8");
+  const result = JSON.parse(data);
+  console.log(result[0].job_title);
 };
 
 export default Home;
