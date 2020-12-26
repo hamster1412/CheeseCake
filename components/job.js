@@ -18,7 +18,7 @@ export default function Job() {
                 <div class="text-sm font-medium text-gray-900">
                   Web Developer
                 </div>
-                <div class="text-sm text-gray-500">jane.cooper@example.com</div>
+                <div class="text-sm text-gray-500"><a href="Mailto:jane.cooper@example.com?subject=Job application&body=I need a job">jane.cooper@example.com</a></div>
               </div>
             </div>
           </td>
