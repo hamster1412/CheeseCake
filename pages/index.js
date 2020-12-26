@@ -39,6 +39,11 @@ export const getStaticProps = async () => {
   const data = fs.readFileSync("data.json", "utf-8");
   const result = JSON.parse(data);
   console.log(result[0].job_title);
+  return {
+    props: {
+      result,
+    },
+  };
 };
 
 export default Home;
