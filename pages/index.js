@@ -3,11 +3,11 @@ import Layout, { siteTitle } from "../components/layout";
 import Nav from "../components/nav";
 import List from "../components/list";
 import Pagination from "../components/pagination";
-// import utilStyles from "../styles/utils.module.css";
-// import Link from "next/link";
+import utilStyles from "../styles/utils.module.css";
+import Link from "next/link";
 import fs from "fs";
 
-const Home = () => (
+const Home = ({results}) => (
   <div>
     <Nav />
     <br />
@@ -19,17 +19,7 @@ const Home = () => (
       {/* <Filterbox/> */}
       <br />
     </Layout>
-    <List />
-    {/* articles */}
-    {/*{slugs.map((slug) => {
-      return (
-        <div className={utilStyles.center} key={slug}>
-          <Link href={slug}>
-            <a> {slug} </a>
-          </Link>
-        </div>
-      );
-    })} */}
+    <List results={results}/>
 
     <Pagination />
   </div>
@@ -37,11 +27,10 @@ const Home = () => (
 
 export const getStaticProps = async () => {
   const data = fs.readFileSync("data.json", "utf-8");
-  const result = JSON.parse(data);
-  console.log(result[0].job_title);
+  const results = JSON.parse(data);
   return {
     props: {
-      result,
+      results
     },
   };
 };
