@@ -1,17 +1,32 @@
 CREATE DATABASE cheesecake;
 USE cheesecake;
 
-CREATE TABLE user(
+CREATE TABLE users(
     id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(255) NOT NULL,
-    role VARCHAR(255) NOT NULL,
-    PRIMARY KEY (id)
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+    email VARCHAR(60) NOT NULL,
+    password VARCHAR(60) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    role VARCHAR(120) NOT NULL DEFAULT "Student",
+    PRIMARY KEY (id),
+    token VARCHAR(255),
 )
 
-CREATE TABLE job(
+CREATE TABLE jobs(
     id INT NOT NULL AUTO_INCREMENT,
-    title VARCHAR(255) NOT NULL,
-    location TEXT,
+    title VARCHAR(120) NOT NULL,
+    company VARCHAR(255),
+    description TEXT,
+    location VARCHAR,
     posted_time DATETIME,
     PRIMARY KEY (id)
 );
+
+CREATE TABLE companies(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(120) NOT NULL,
+    location VARCHAR,
+    email VARCHAR(60),
+    PRIMARY KEY (id)
+)
