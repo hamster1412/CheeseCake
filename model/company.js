@@ -1,34 +1,25 @@
 const { Sequelize, DataTypes, Model } = require("sequelize");
 const sequelize = new Sequelize("database", "username", {
   dialect: "postgres",
+  dialectOptions: {},
 });
 
-class Job extends Model {}
+class Company extends Model {}
 
-Job.init(
+Company.init(
   {
-    title: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    company_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    description: {
+    location: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    mail: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    posted_time: {
-        type: DataTypes.TIME,
-    }
   },
-  {
-    sequelize,
-    modelName: "Job",
-  }
+  { sequelize, modelName: "Company" }
 );
