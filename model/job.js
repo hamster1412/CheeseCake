@@ -11,8 +11,8 @@ Job.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    company: {
-      type: DataTypes.STRING,
+    company_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     description: {
@@ -23,6 +23,9 @@ Job.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    posted_time: {
+        type: DataTypes.TIME,
+    }
   },
   {
     sequelize,

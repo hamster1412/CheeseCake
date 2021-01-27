@@ -14,9 +14,9 @@ CREATE TABLE users(
 )
 
 CREATE TABLE jobs(
-    id INT NOT NULL AUTO_INCREMENT,
+    job_id INT NOT NULL AUTO_INCREMENT,
     title VARCHAR(120) NOT NULL,
-    company VARCHAR(255),
+    company_id INT NOT NULL,
     description TEXT,
     location VARCHAR,
     posted_time DATETIME,
@@ -24,7 +24,7 @@ CREATE TABLE jobs(
 );
 
 CREATE TABLE companies(
-    id INT NOT NULL AUTO_INCREMENT,
+    company_id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(120) NOT NULL,
     location VARCHAR,
     email VARCHAR(60),
