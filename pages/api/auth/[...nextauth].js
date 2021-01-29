@@ -13,6 +13,26 @@ const options = {
     }),
   ],
   database: process.env.DATABASE_URL,
+  session: {},
+  jwt: {},
+  callbacks: {
+    signIn: async (user, account, profile) => {
+      return true;
+    },
+    session: async (session, user) => {
+      return Promise.resolve(session);
+    },
+    jwt: async (token, user, account, profile, isNewUser) => {
+      return Promise.resolve(token);
+    },
+  },
+  routes:{
+    //signIn:
+    //signOut:
+    //error:
+    //newUser: null, redirect to signUp
+  }
 };
 
-export default (req, res) => NextAuth(req, res, options);
+const Auth = (req, res) => NextAuth(req, res, options)
+export default Auth;
