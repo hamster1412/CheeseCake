@@ -1,8 +1,7 @@
 import React from "react";
 
-export default function Job() {
+export default function Job({result}){
   return (
-    <div>
       <tbody className="bg-white divide-y divide-gray-200">
         <tr>
           <td className="px-6 py-4 whitespace-nowrap">
@@ -16,17 +15,17 @@ export default function Job() {
               </div>
               <div className="ml-4">
                 <div className="text-sm font-medium text-gray-900">
-                  Web Developer
+                  {result.job_title}
                 </div>
-                <div className="text-sm text-gray-500">jane.cooper@example.com</div>
+                <div className="text-sm text-gray-500"><a href="Mailto:jane.cooper@example.com?subject=Job application&body=I need a job">{result.mail}</a></div>
               </div>
             </div>
           </td>
           <td className="px-6 py-4 whitespace-nowrap">
             <div className="text-sm text-gray-900">
-              Regional Paradigm Technician
+              {result.description}
             </div>
-            <div className="text-sm text-gray-500">Optimization</div>
+            <div className="text-sm text-gray-500">{result.job_title}</div>
           </td>
           <td className="px-6 py-4 whitespace-nowrap">
             <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
@@ -43,6 +42,5 @@ export default function Job() {
           </td>
         </tr>
       </tbody>
-    </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import SelectBox from "./slectBox";
 import Job from "./job";
-export default function List({ slugs }) {
+export default function List({ results }) {
   return (
     <div>
       <div className="flex flex-col">
@@ -42,19 +42,9 @@ export default function List({ slugs }) {
                     </th> */}
                   </tr>
                 </thead>
-                <Job />
-                <Job />
-                <Job />
-                <Job />
-                <Job />
-                <Job />
-                <Job />
-                <Job />
-                <Job />
-                <Job />
-                <Job />
-                <Job />
-                <Job />
+                {results.map((result) => {
+                  return <Job result={result}></Job>;
+                })}
               </table>  
             </div>
           </div>
