@@ -13,7 +13,7 @@ const Post = ({ data }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const data = fs.readFileSync('data.json').toString();
   return {
     props: {
