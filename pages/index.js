@@ -19,7 +19,6 @@ const Home = ({results}) => (
       <br />
     </Layout>
     <List results={results}/>
-
     <Pagination />
   </div>
 );
