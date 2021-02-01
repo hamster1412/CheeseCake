@@ -3,14 +3,11 @@ import Layout, { siteTitle } from "../components/layout";
 import Nav from "../components/nav";
 import List from "../components/list";
 import Pagination from "../components/pagination";
-import utilStyles from "../styles/utils.module.css";
-import Link from "next/link";
 import fs from "fs";
 
 const Home = ({results}) => (
   <div>
     <Nav />
-    <br />
     <br />
     <Layout home>
       <Head>

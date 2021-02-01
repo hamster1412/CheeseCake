@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-function app() {
+function App() {
   const getData = async () => {
     let url = "http://localhost:5000/";
     let response = await fetch(url);
@@ -15,4 +15,4 @@ function app() {
   return <div>{data}</div>;
 }
 
-export default app;
+export default App;
