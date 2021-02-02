@@ -1,5 +1,6 @@
 import React from "react";
 import Job from "./job";
+
 export default function List({ results }) {
   return (
     <div>
