@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes, Model } = require("sequelize");
-const sequelize = new Sequelize("database", "username", {
+const sequelize = new Sequelize("my App", "username", {
   dialect: "postgres",
 });
 

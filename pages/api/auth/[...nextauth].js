@@ -3,17 +3,23 @@ import Providers from "next-auth/providers";
 
 const options = {
   providers: [
-    Providers.GitHub({
-      clientId: process.env.CLIENT_ID_GITHUB,
-      clientSecret: process.env.CLIENT_SECRET_GITHUB,
-    }),
     Providers.LinkedIn({
       clientId: process.env.CLIENT_ID_LINKEDIN,
       clientSecret: process.env.CLIENT_SECRET_LINKEDIN,
     }),
+    Providers.GitHub({
+      clientId: process.env.CLIENT_ID_GITHUB,
+      clientSecret: process.env.CLIENT_SECRET_GITHUB,
+    }),
   ],
   database: process.env.DATABASE_URL,
-  session: {},
+  session: {
+    user: {
+      name: String,
+      email: String,
+      image: URL,
+    },
+  },
   jwt: {},
   callbacks: {
     signIn: async (user, account, profile) => {
@@ -26,13 +32,8 @@ const options = {
       return Promise.resolve(token);
     },
   },
-  routes:{
-    //signIn:
-    //signOut:
-    //error:
-    //newUser: null, redirect to signUp
-  }
+  routes: {},
 };
 
-const Auth = (req, res) => NextAuth(req, res, options)
+const Auth = (req, res) => NextAuth(req, res, options);
 export default Auth;

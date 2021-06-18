@@ -22,6 +22,9 @@ User.init(
     password: {
       type: DataTypes.STRING,
       allowNull: false,
+      trim: true,
+      unique: true,
+      lowercase: true,
     },
     phone: {
         type: DataTypes.NUMBER,
