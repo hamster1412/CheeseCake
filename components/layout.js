@@ -1,14 +1,15 @@
 import Head from "next/head";
-import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const name = "Interntrip";
 export const siteTitle = "Interntrip";
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -24,37 +25,21 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header>
         {home ? (
           <>
-            <img
-              src="/images/thislogo.jpg"
-              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-            <p>
-              As a company of seasoned travelers, we’ve experienced first hand
-              what a stressful and difficult experience it is to find reliable
-              information about programs abroad. Our mission is to give you the
-              knowledge and confidence to choose the right program for your next
-              adventure
-            </p>
+            <h1>{name}</h1>
           </>
         ) : (
           <>
             <Link href="/">
               <a>
-                <img
-                  src="/images/profile.jpg"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                  alt={name}
-                />
+                <img src="/images/profile.jpg" alt={name} />
               </a>
             </Link>
-            <h2 className={utilStyles.headingLg}>
+            <h2>
               <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
+                <a>{name}</a>
               </Link>
             </h2>
           </>
@@ -62,7 +47,7 @@ export default function Layout({ children, home }) {
       </header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div>
           <Link href="/">
             <a>← Back to home</a>
           </Link>

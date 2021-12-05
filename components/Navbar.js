@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Nav() {
+export default function Navbar() {
   let key = "";
   const search = (e) => {
     key = e.target.value;
@@ -66,28 +66,28 @@ export default function Nav() {
               <div className="hidden sm:block sm:ml-6">
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="/joblist"
                     className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    Dashboard
+                    Find Job
                   </a>
                   <a
                     href="#"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    Team
+                    Company
                   </a>
                   <a
                     href="#"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    Projects
+                    Collab
                   </a>
                   <a
                     href="#"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
-                    Calendar
+                    Blog
                   </a>
                   <input
                     onChange={(e) => search(e)}
