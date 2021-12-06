@@ -9,17 +9,18 @@
     "build:css": "tailwind build style/index.css -o style/style.css"
   },
   "dependencies": {
-    "autoprefixer": "^10.0.2",
+    "alpinejs": "^3.7.0",
+    "autoprefixer": "^10.4.0",
     "dotenv": "^8.2.0",
     "gray-matter": "^4.0.2",
     "jsonwebtoken": "^8.5.1",
     "marked": "^1.2.4",
-    "next": "^10.0.0",
+    "next": "^12.0.7",
     "next-auth": "^3.1.0",
-    "postcss": "^8.1.10",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "postcss": "^8.4.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "sequelize": "^6.4.0",
-    "tailwindcss": "^2.0.1"
+    "tailwindcss": "^2.2.19"
   }
 }
