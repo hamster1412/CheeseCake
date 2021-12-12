@@ -1,18 +1,18 @@
 import React from "react";
 const results = require("../data.json");
 import Job from "../components/Job";
-import Pagination from "../components/pagination";
+import PaginatedItems from "../components/Pagination";
 import Layout from "../components/layout";
 
 function joblist() {
   return (
     <Layout home>
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-3">
         {results.map((result) => {
-          return <Job result={result}></Job>;
+          return <Job key={result.id} result={result}></Job>;
         })}
       </div>
-      <Pagination />
+      <PaginatedItems />
     </Layout>
   );
 }

@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import Navbar from "./navbar/Navbar";
 import Footer from "../components/Footer";
 
 export const siteTitle = "Interntrip";
