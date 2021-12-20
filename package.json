@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
     "alpinejs": "^3.7.0",
+    "antd": "^4.17.3",
     "autoprefixer": "^10.4.0",
     "dotenv": "^8.2.0",
     "gray-matter": "^4.0.2",
